@@ -18,9 +18,22 @@ export function ProductCard({ id, title, price, rating, thumbnail, isFavorite, o
         <div className="flex justify-between items-center">
           <span className="text-blue-600 font-bold">${price.toFixed(2)}</span>
           <div className="flex items-center gap-1 text-sm">
-            <span><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg>{rating.toFixed(1)}</span>
+            <span className="flex items-center gap-0.5">
+              <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#facc15">
+                <path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z" />
+              </svg>
+              {rating.toFixed(1)}
+            </span>
             <button onClick={e => { e.stopPropagation(); onToggleFavorite(id) }}>
-              {isFavorite ? '<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M440-501Zm0 381L313-234q-72-65-123.5-116t-85-96q-33.5-45-49-87T40-621q0-94 63-156.5T260-840q52 0 99 22t81 62q34-40 81-62t99-22q81 0 136 45.5T831-680h-85q-18-40-53-60t-73-20q-51 0-88 27.5T463-660h-46q-31-45-70.5-72.5T260-760q-57 0-98.5 39.5T120-621q0 33 14 67t50 78.5q36 44.5 98 104T440-228q26-23 61-53t56-50l9 9 19.5 19.5L605-283l9 9q-22 20-56 49.5T498-172l-58 52Zm280-160v-120H600v-80h120v-120h80v120h120v80H800v120h-80Z"/></svg>' : '<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M440-501Zm0 381L313-234q-72-65-123.5-116t-85-96q-33.5-45-49-87T40-621q0-94 63-156.5T260-840q52 0 99 22t81 62q34-40 81-62t99-22q84 0 153 59t69 160q0 14-2 29.5t-6 31.5h-85q5-18 8-34t3-30q0-75-50-105.5T620-760q-51 0-88 27.5T463-660h-46q-31-45-70.5-72.5T260-760q-57 0-98.5 39.5T120-621q0 33 14 67t50 78.5q36 44.5 98 104T440-228q26-23 61-53t56-50l9 9 19.5 19.5L605-283l9 9q-22 20-56 49.5T498-172l-58 52Zm160-280v-80h320v80H600Z"/></svg>'}
+              {isFavorite ? (
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e53e3e">
+                  <path d="M480-147q-14 0-28.5-5T426-168L142-452q-42-42-62-91t-20-99q0-104 69.5-176T306-890q42 0 80.5 16t68.5 45l25 25 25-25q30-29 68.5-45t80.5-16q107 0 176.5 72T900-642q0 50-20 99t-62 91L534-168q-12 11-26.5 16T480-147Z" />
+                </svg>
+              ) : (
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#aaaaaa">
+                  <path d="M480-147q-14 0-28.5-5T426-168L142-452q-42-42-62-91t-20-99q0-104 69.5-176T306-890q42 0 80.5 16t68.5 45l25 25 25-25q30-29 68.5-45t80.5-16q107 0 176.5 72T900-642q0 50-20 99t-62 91L534-168q-12 11-26.5 16T480-147Zm0-92 284-284q32-32 46-68t14-68q0-72-46-120t-118-48q-42 0-79 18.5T516-756l-36 38-36-38q-26-28-63-46.5T302-821q-72 0-117 48T140-653q0 32 14 68t46 68l280 278Z" />
+                </svg>
+              )}
             </button>
           </div>
         </div>
